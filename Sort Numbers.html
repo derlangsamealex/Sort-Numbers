@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sort Numbers</title>
+	    <script language="javascript" type="text/javascript" src="Sort Numbers.js"></script>
+    </head>
+    <body>
+        <button id=generate onclick=funcrandomnumbers() style="position:absolute;">random numbers</button>
+        <button id=start onclick=funcsortnumbers(); disabled=true style="position:absolute; left:130px">sort</button>
+        <button id=+ onclick=add(); style="position:absolute; left:226px; width:25px"> + </button>
+        <div id=amount style="position:absolute; left:199px;">5</div>
+        <button id=- onclick=subtract();  style="position:absolute; left:174px; width:25px;"> - </button>
+        <script>
+var Canvas = class
+{
+    constructor(width,height,left,top,color)
+    {
+        this.width = width;
+        this.height = height;
+        this.left = left;
+        this.top = top;
+        this.color = color;
+    }
+    create(width,height,left,top,color)
+    {
+        this.canvas = document.createElement("canvas");
+        this.canvas.style.position="absolute";
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+        this.canvas.style.left = this.left+"px";
+        this.canvas.style.top = this.top+"px"; 
+        this.canvas.style.background=this.color;
+        document.body.appendChild(this.canvas);
+        return this.canvas;
+    }
+    translate(left,top)
+    {
+        this.left+=left;
+        this.top+=top;
+        this.canvas.style.left = this.left+"px";
+        this.canvas.style.top = this.top+"px";           
+    }
+    size(width,height)
+    {
+        this.width=width;
+        this.height=height;
+        this.canvas.style.width = this.width;
+        this.canvas.style.height = this.height;         
+    }
+    delete()
+    {
+        document.body.removeChild(this.canvas);
+    }
+}
+        </script>
+    </body>
+</html>
